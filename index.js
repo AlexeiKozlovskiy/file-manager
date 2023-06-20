@@ -1,6 +1,7 @@
-import { argv, stdin, stdout } from 'process';
+import { argv, stdin, stdout, cwd } from 'process';
 import readline from 'readline';
 import os from 'os';
+import { up } from './components/up.js';
 
 let currentPath = os.homedir();
 const usernameArgv = argv.find((arg) => arg.startsWith('--username'));
@@ -14,7 +15,9 @@ rl.on('line', (input) => {
   if (input === '.exit') {
     rl.close();
   }
-  stdout.write(`You are currently in ${currentPath}\n`);
+  if (input === 'up') {
+    up();
+  }
 });
 
 rl.on('close', () => {
