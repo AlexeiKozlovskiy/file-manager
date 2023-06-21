@@ -1,23 +1,38 @@
-import { argv, stdin, stdout, cwd } from 'process';
+import { argv, stdin, stdout, cwd, chdir } from 'process';
 import readline from 'readline';
 import os from 'os';
-import { up } from './components/up.js';
+import { getCommand } from './components/commands.js';
 
 let currentPath = os.homedir();
+chdir(currentPath);
+
 const usernameArgv = argv.find((arg) => arg.startsWith('--username'));
 const username = usernameArgv ? usernameArgv.slice(11) : 'Noname';
+const showMessage = (currentPath) => {
+  stdout.write(`\nYou are currently in ${currentPath}\n`);
+  stdout.write(`Enter your command\n`);
+};
+
 stdout.write(`Welcome to the File Manager, ${username}!\n`);
-stdout.write(`You are currently in ${currentPath}\n`);
+
+showMessage(currentPath);
 
 const rl = readline.createInterface({ input: stdin, output: stdout });
 
-rl.on('line', (input) => {
+rl.on('line', async (input) => {
   if (input === '.exit') {
     rl.close();
+    return;
   }
-  if (input === 'up') {
-    up();
+  try {
+    const inputValues = input.split(' ').filter((value) => value !== '');
+    const [command, ...commandValues] = inputValues;
+    const commands = getCommand(command, commandValues);
+    await commands(commandValues);
+  } catch (err) {
+    stdout.write(`${err.message}\n`);
   }
+  showMessage(cwd());
 });
 
 rl.on('close', () => {
