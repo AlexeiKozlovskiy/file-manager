@@ -1,5 +1,6 @@
 import { up } from './up.js';
 import { cd } from './cd.js';
+import { ls } from './ls.js';
 
 const commands = [
   {
@@ -9,6 +10,10 @@ const commands = [
   {
     command: cd,
     argsValue: 1,
+  },
+  {
+    command: ls,
+    argsValue: 0,
   },
 ];
 
