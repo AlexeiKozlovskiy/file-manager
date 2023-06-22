@@ -9,7 +9,7 @@ export const rm = async (args) => {
     stdout.write(`File removed\n`);
   } catch (err) {
     stdout.write(`Operation failed\n`);
-    
+
     if (err.code === 'ENOENT') {
       stdout.write(`No such file exists\n`);
     }
