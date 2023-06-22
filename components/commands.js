@@ -3,6 +3,7 @@ import { cd } from './cd.js';
 import { ls } from './ls.js';
 import { cat } from './cat.js';
 import { add } from './add.js';
+import { rn } from './rn.js';
 
 const commands = [
   {
@@ -24,6 +25,10 @@ const commands = [
   {
     command: add,
     argsValue: 1,
+  },
+  {
+    command: rn,
+    argsValue: 2,
   },
 ];
 
