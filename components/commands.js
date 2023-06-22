@@ -5,6 +5,8 @@ import { cat } from './cat.js';
 import { add } from './add.js';
 import { rn } from './rn.js';
 import { cp } from './cp.js';
+import { rm } from './rm.js';
+
 
 const commands = [
   {
@@ -34,6 +36,10 @@ const commands = [
   {
     command: cp,
     argsValue: 2,
+  },
+  {
+    command: rm,
+    argsValue: 1,
   },
 ];
 
