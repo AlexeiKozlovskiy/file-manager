@@ -1,6 +1,6 @@
 import { createReadStream } from 'fs';
 import { stdout } from 'process';
-import { getAbsPath } from './absPath.js';
+import { getAbsPath } from './utils.js';
 
 export const cat = async (filePath) => {
   const stream = createReadStream(getAbsPath(filePath[0]), 'utf-8');

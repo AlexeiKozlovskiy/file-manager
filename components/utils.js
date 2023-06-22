@@ -6,7 +6,7 @@ export const getAbsPath = (path) => {
   return isAbsolute(path) ? path : join(cwd(), path);
 };
 
-export const isHaveFile = async (path) => {
+export const alreadyExists = async (path) => {
   try {
     await access(path);
     return true;

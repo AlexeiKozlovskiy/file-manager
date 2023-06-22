@@ -1,6 +1,6 @@
 import { rename, stat } from 'fs/promises';
 import { stdout } from 'process';
-import { getAbsPath, isHaveFile } from './absPath.js';
+import { getAbsPath, alreadyExists } from './utils.js';
 
 export const rn = async (args) => {
   try {
@@ -9,7 +9,7 @@ export const rn = async (args) => {
       throw new Error();
     }
 
-    if (await isHaveFile(getAbsPath(args[1]))) {
+    if (await alreadyExists(getAbsPath(args[1]))) {
       stdout.write(`This name is already in use\n`);
       throw new Error();
     }
