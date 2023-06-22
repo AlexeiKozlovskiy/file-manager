@@ -1,9 +1,5 @@
 import { chdir, stdout, cwd } from 'process';
-import { join, isAbsolute } from 'path';
-
-const getAbsPath = (path) => {
-  return isAbsolute(path) ? path : join(cwd(), path);
-};
+import { getAbsPath } from './absPath.js';
 
 export const cd = (args) => {
   try {
