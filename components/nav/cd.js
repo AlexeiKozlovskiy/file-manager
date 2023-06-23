@@ -1,5 +1,5 @@
 import { chdir, stdout, cwd } from 'process';
-import { getAbsPath } from './utils.js';
+import { getAbsPath } from '../utils.js';
 
 export const cd = (args) => {
   try {

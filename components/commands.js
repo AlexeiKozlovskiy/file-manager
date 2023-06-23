@@ -1,16 +1,16 @@
-import { up } from './up.js';
-import { cd } from './cd.js';
-import { ls } from './ls.js';
-import { cat } from './cat.js';
-import { add } from './add.js';
-import { rn } from './rn.js';
-import { cp } from './cp.js';
-import { mv } from './mv.js';
-import { rm } from './rm.js';
-import { os } from './os.js';
-import { hash } from './hash.js';
-import { compress } from './compress.js';
-import { decompress } from './decompress.js';
+import { up } from './nav/up.js';
+import { cd } from './nav/cd.js';
+import { ls } from './nav/ls.js';
+import { cat } from './fs/cat.js';
+import { add } from './fs/add.js';
+import { rn } from './fs/rn.js';
+import { cp } from './fs/cp.js';
+import { mv } from './fs/mv.js';
+import { rm } from './fs/rm.js';
+import { os } from './os/os.js';
+import { hash } from './fs/hash.js';
+import { compress } from './zip/compress.js';
+import { decompress } from './zip/decompress.js';
 
 const commands = [
   {

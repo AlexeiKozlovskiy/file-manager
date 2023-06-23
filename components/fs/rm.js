@@ -1,4 +1,4 @@
-import { getAbsPath } from './utils.js';
+import { getAbsPath } from '../utils.js';
 import { unlink } from 'fs/promises';
 import { stdout } from 'process';
 

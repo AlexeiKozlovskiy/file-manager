@@ -1,15 +1,15 @@
 import { basename, join } from 'path';
 import { stat } from 'fs/promises';
 import { createReadStream, createWriteStream } from 'fs';
-import { getAbsPath, alreadyExists } from './utils.js';
+import { getAbsPath, alreadyExists } from '../utils.js';
 import { pipeline } from 'stream/promises';
-import { createBrotliCompress } from 'zlib';
+import { createBrotliDecompress } from 'zlib';
 import { stdout } from 'process';
 
-export const compress = async (args) => {
+export const decompress = async (args) => {
   const filePath = getAbsPath(args[0]);
-  const filename = basename(filePath);
-  const newFilePath = join(getAbsPath(args[1]), `${filename}.br`);
+  const filename = basename(filePath, '.br');
+  const newFilePath = join(getAbsPath(args[1]), filename);
 
   try {
     if (!(await alreadyExists(filePath)) || (await stat(filePath)).isDirectory() ) {
@@ -18,7 +18,7 @@ export const compress = async (args) => {
     }
     await pipeline(
       createReadStream(filePath),
-      createBrotliCompress(),
+      createBrotliDecompress(),
       createWriteStream(newFilePath)
     );
     stdout.write(`File ${filePath} is compressed to ${newFilePath}\n`);

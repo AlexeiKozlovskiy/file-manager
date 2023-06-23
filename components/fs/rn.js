@@ -1,6 +1,6 @@
 import { rename, stat } from 'fs/promises';
 import { stdout } from 'process';
-import { getAbsPath, alreadyExists } from './utils.js';
+import { getAbsPath, alreadyExists } from '../utils.js';
 
 export const rn = async (args) => {
   try {
