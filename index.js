@@ -11,6 +11,8 @@ const username = usernameArgv ? usernameArgv.slice(11) : 'Noname';
 const showMessage = (currentPath) => {
   stdout.write(`\nYou are currently in ${currentPath}\n`);
   stdout.write(`Enter your command\n`);
+  stdout.write(`________________________________________________\n`);
+
 };
 
 stdout.write(`Welcome to the File Manager, ${username}!\n`);

@@ -8,6 +8,7 @@ import { cp } from './cp.js';
 import { mv } from './mv.js';
 import { rm } from './rm.js';
 import { os } from './os.js';
+import { hash } from './hash.js';
 
 
 const commands = [
@@ -49,6 +50,10 @@ const commands = [
   },
   {
     command: os,
+    argsValue: 1,
+  },
+  {
+    command: hash,
     argsValue: 1,
   },
 ];
