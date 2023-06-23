@@ -7,6 +7,8 @@ import { rn } from './rn.js';
 import { cp } from './cp.js';
 import { mv } from './mv.js';
 import { rm } from './rm.js';
+import { os } from './os.js';
+
 
 const commands = [
   {
@@ -44,6 +46,10 @@ const commands = [
   {
     command: mv,
     argsValue: 2,
+  },
+  {
+    command: os,
+    argsValue: 1,
   },
 ];
 
