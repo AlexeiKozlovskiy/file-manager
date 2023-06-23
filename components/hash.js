@@ -1,4 +1,4 @@
-import { getAbsPath, alreadyExists } from './utils.js';
+import { getAbsPath } from './utils.js';
 import { readFile } from 'fs/promises';
 import { stdout } from 'process';
 import { createHash } from 'crypto';

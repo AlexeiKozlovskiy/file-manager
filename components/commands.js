@@ -9,7 +9,7 @@ import { mv } from './mv.js';
 import { rm } from './rm.js';
 import { os } from './os.js';
 import { hash } from './hash.js';
-
+import { compress } from './compress.js';
 
 const commands = [
   {
@@ -55,6 +55,10 @@ const commands = [
   {
     command: hash,
     argsValue: 1,
+  },
+  {
+    command: compress,
+    argsValue: 2,
   },
 ];
 
