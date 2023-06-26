@@ -12,7 +12,7 @@ export const os = (args) => {
     stdout.write(`Overall amount of CPUS: ${cpus.length}\n`);
     cpus.forEach((cpu) => {
       stdout.write(`Model: ${cpu.model}\n`);
-      stdout.write(`Сpu frequency: ${cpu.speed}Hz\n`);
+      stdout.write(`Сpu frequency: ${cpu.speed / 1000}GHz\n`);
     });
   }
   if (params === '--homedir') {
