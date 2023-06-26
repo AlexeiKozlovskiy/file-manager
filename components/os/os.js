@@ -5,7 +5,7 @@ export const os = (args) => {
   const params = args[0];
 
   if (params === '--EOL') {
-    stdout.write(`default system End-Of-Line: ${JSON.stringify(OS.EOL)}`);
+    stdout.write(`Default system End-Of-Line: ${OS.EOL}`);
   }
   if (params === '--cpus') {
     const cpus = OS.cpus();
